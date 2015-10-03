@@ -1,10 +1,75 @@
-<h1>{{ title }}</h1>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Welcome | {% endblock %}
+
+<style>
+{% block style %}
+	.jumbotron{
+		background-color: #516CF5
+	}
+
+{% endblock %}
+</style>
 
 
-<form method='POST' action=''>{% csrf_token %}
 
-{{ form }}
+{% block jumbotron%}
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+	<div class='col-sm-6'>
+	    <!-- <div class="jumbotron"> -->
+	        <h1>Django LP template</h1>
+	        <p>This example is a quick exercise to illustrate how Django framework can be used to develop a langing page.</p>
+	        <p>
+	          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us! &raquo;</a>
+	        </p>
+	    <!-- </div> -->
+	</div>
+	<div class='col-sm-6' >
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/N_m56irWKeI" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+</div>
+</div>
+{% endblock %}
 
-<input type='submit' value='SignUp' />
 
-</form>
+
+{% block content %}
+<div class="row">
+
+
+	<div class="col-sm-3  pull-right">
+
+		<p class='lead text-align-center'>{{ title }}</p>
+
+		<form method='POST' action=''>{% csrf_token %}
+
+		{{ form|crispy }}
+
+		<input  class='btn btn-primary' type='submit' value='SignUp' />
+
+		</form>
+	</div>
+
+	<div class=col-xs-3>
+		<p class='lead text-align-center'>Built with Django &amp; Bootstrap</p>
+		<img src='http://epic-cdn.epictinker.com/v/vspfiles/photos/500advkit-9.jpg' class='img-responsive' />
+	</div>
+
+	<div class=col-xs-3>
+		<p class='lead text-align-center'>Open source</p>
+		<img src='http://www.designworldonline.com/uploads/Imagegallery/ABB%20Motor%20Gear%20Packages.jpg' class='img-responsive' />
+	</div>
+
+	<div class=col-xs-3>
+		<p class='lead text-align-center'>Extendable project</p>
+		<img src='http://www.robotiqueconcept.com/wp-content/uploads/2015/05/pb-robot.jpg' class='img-responsive' />
+	</div>
+
+</div>
+
+{% endblock %}

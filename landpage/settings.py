@@ -27,16 +27,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'mnrozhkov@gmail.com'
+# EMAIL_HOST_PASSWORD = 
 
 # Application definition
 INSTALLED_APPS = (
+    # django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party apps
+    'crispy_forms',
+    # my apps
     'newsletter',
+    'views'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,3 +108,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_root")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    # '/var/wwww/static',
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.join(BASE_DIR, "static", "media_root"))
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
