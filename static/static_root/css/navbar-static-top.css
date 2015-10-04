@@ -1,9 +1,11 @@
 body {
-	min-height: 2000px;
+	min-height: 1000px;
 }
 
 .navbar-static-top {
 	margin-bottom: 19px;
 	background-color: #516CF5;
+	padding: 0px 0px;
+	margin-bottom: 0px !important;
 }
 
